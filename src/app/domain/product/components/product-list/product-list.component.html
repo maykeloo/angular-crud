@@ -1,0 +1,17 @@
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td scope="row">{{ product.uuid }}</td>
+      <td >{{ product.name }}</td>
+      <td >{{ product.price |currency: 'USD' }}</td>
+    </tbody>
+  </table>
+</div>

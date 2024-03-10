@@ -7,10 +7,10 @@ export class RestClient {
     return data as ResponseType;
   }
 
-  async post<ResponseType, DataType>(
+  async post<DataType>(
     url: string,
     data: DataType
-  ): Promise<ResponseType> {
+  ): Promise<DataType> {
     const response = await fetch(`${this.BASE}/${url}`, {
       method: 'POST',
       headers: {
@@ -19,7 +19,7 @@ export class RestClient {
       body: JSON.stringify(data)
     });
     const responseData = await response.json();
-    return responseData as ResponseType;
+    return responseData as DataType;
   }
 
   async patch<ResponseType, DataType>(

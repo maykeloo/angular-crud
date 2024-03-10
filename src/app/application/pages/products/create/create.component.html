@@ -1,0 +1,10 @@
+<div>
+  <h2>Add product</h2>
+  <form [formGroup]="form">
+    <label>Name</label>
+    <input formControlName="name" type="text">
+    <label>Price</label>
+    <input formControlName="price" type="number">
+    <button (click)="createProduct()">Create</button>
+  </form>
+</div>
