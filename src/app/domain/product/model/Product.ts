@@ -7,3 +7,5 @@ export type Product = {
   name: string;
   price: ProductPrice;
 }
+
+export type CreateProduct = Omit<Product, 'uuid'>

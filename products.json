@@ -35,6 +35,12 @@
       "name": "test",
       "price": 123,
       "uuid": "366ysh"
+    },
+    {
+      "id": "5df2",
+      "name": "test2",
+      "price": 2323123,
+      "uuid": "21b67083-3698-4d02-a2b7-3772fbef9014"
     }
   ]
 }

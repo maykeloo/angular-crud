@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../../../domain/product/data-access/product.service';
-import { Product } from '../../../../domain/product/model/Product';
+import { CreateProduct, Product } from '../../../../domain/product/model/Product';
 import { ProductController } from '../../../../infrastructure/web/ProductController';
 
 @Component({
@@ -22,7 +22,7 @@ export class CreateComponent {
   private productService = inject(ProductService);
 
   formBuilder = inject(FormBuilder);
-  form = this.formBuilder.group<Omit<Product, 'uuid'>>({
+  form = this.formBuilder.group<CreateProduct>({
     name: '',
     price: 0
   });
@@ -31,7 +31,7 @@ export class CreateComponent {
     const payload: Product = {
       name: this.form.value.name || '',
       price: this.form.value.price || 0,
-      uuid: Math.random().toString(36).substring(7)
+      uuid: crypto.randomUUID()
     };
 
     this.productService.$createProduct(payload).subscribe(() => {
