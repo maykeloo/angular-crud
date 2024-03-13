@@ -5,4 +5,5 @@ export type ProductRepository = {
   createProduct: (product: Product) => Promise<Product>;
   getProduct: (productId: string) => Promise<Product>;
   updateProduct: (product: Product) => Promise<Product>;
+  deleteProduct: (productId: string) => Promise<void>;
 }

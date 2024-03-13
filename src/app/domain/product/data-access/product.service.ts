@@ -21,4 +21,8 @@ export class ProductService implements RepositoryMethods<ProductRepository> {
   $updateProduct(product: Product) {
     return from(this.productController.updateProduct(product));
   }
+
+  $deleteProduct(productId: string) {
+    return from(this.productController.deleteProduct(productId));
+  }
 }
