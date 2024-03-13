@@ -22,9 +22,9 @@ export class RestClient {
     return responseData as DataType;
   }
 
-  async patch<ResponseType, DataType>(
+  async patch<ResponseType>(
     url: string,
-    data: DataType
+    data: ResponseType
   ): Promise<ResponseType> {
     const response = await fetch(`${this.BASE}/${url}`, {
       method: 'PATCH',

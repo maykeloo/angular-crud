@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../model/Product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'angular-crud-product-list',
@@ -11,4 +12,10 @@ import { Product } from '../../model/Product';
 })
 export class ProductListComponent {
   @Input({ required: true }) products: Product[] = [];
+
+  router = inject(Router)
+
+  goToProductDetails(productId: string) {
+    return this.router.navigate(['products', 'edit', productId])
+  }
 }

@@ -1,1 +1,7 @@
-<p>ProductForm works!</p>
+<form [formGroup]="form">
+  <label>Name</label>
+  <input formControlName="name" type="text">
+  <label>Price</label>
+  <input formControlName="price" type="number">
+  <button (click)="confirmForm()">Confirm</button>
+</form>
