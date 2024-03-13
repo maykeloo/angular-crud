@@ -22,10 +22,7 @@ import { ProductFormComponent } from '../../../../domain/product/components/prod
 export class CreateComponent {
   private productService = inject(ProductService);
 
-  createProduct(values: {
-    name: string;
-    price: number;
-  }) {
+  createProduct(values: CreateProduct) {
     const payload: Product = {
       name: values.name,
       price: values.price,
