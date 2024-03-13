@@ -3,7 +3,7 @@
     {
       "uuid": 1,
       "name": "Product 1",
-      "price": 100,
+      "price": 9999,
       "id": "c3ca"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "uuid": 5,
-      "name": "Product 5",
+      "name": "Product 5666",
       "price": 500,
       "id": "e7d8"
     },
@@ -41,6 +41,12 @@
       "name": "test2",
       "price": 2323123,
       "uuid": "21b67083-3698-4d02-a2b7-3772fbef9014"
+    },
+    {
+      "id": "bb18",
+      "name": "123",
+      "price": 321,
+      "uuid": "7007e7bb-2e4c-438e-bed8-b13890166404"
     }
   ]
 }

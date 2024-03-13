@@ -3,9 +3,9 @@ export type ProductPrice = number;
 
 
 export type Product = {
-  uuid: ProductId;
+  id: ProductId;
   name: string;
   price: ProductPrice;
 }
 
-export type CreateProduct = Omit<Product, 'uuid'>
+export type CreateProduct = Omit<Product, 'id'>

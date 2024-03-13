@@ -12,4 +12,12 @@ export class ProductController implements ProductRepository {
   createProduct(product: Product) {
     return this.RestClient.post<Product>('products', product)
   }
+
+  getProduct(productId: string) {
+    return this.RestClient.get<Product>(`products/${productId}`)
+  }
+
+  updateProduct(product: Product) {
+    return this.RestClient.patch<Product>(`products/${product.id}`, product)
+  }
 }

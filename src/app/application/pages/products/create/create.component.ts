@@ -1,14 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../../../domain/product/data-access/product.service';
-import { CreateProduct, Product } from '../../../../domain/product/model/Product';
+import { Product } from '../../../../domain/product/model/Product';
 import { ProductController } from '../../../../infrastructure/web/ProductController';
+import { ProductFormComponent } from '../../../../domain/product/components/product-form/product-form.component';
 
 @Component({
   selector: 'angular-crud-create',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ProductFormComponent],
   templateUrl: './create.component.html',
   styleUrl: './create.component.css',
   providers: [
@@ -21,21 +22,16 @@ import { ProductController } from '../../../../infrastructure/web/ProductControl
 export class CreateComponent {
   private productService = inject(ProductService);
 
-  formBuilder = inject(FormBuilder);
-  form = this.formBuilder.group<CreateProduct>({
-    name: '',
-    price: 0
-  });
-
-  createProduct() {
+  createProduct(values: {
+    name: string;
+    price: number;
+  }) {
     const payload: Product = {
-      name: this.form.value.name || '',
-      price: this.form.value.price || 0,
-      uuid: crypto.randomUUID()
+      name: values.name,
+      price: values.price,
+      id: crypto.randomUUID()
     };
 
-    this.productService.$createProduct(payload).subscribe(() => {
-      this.form.reset();
-    });
+    this.productService.$createProduct(payload).subscribe();
   }
 }
