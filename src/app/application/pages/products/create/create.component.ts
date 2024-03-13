@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../../../../domain/product/data-access/product.service';
-import { Product } from '../../../../domain/product/model/Product';
+import { CreateProduct, Product } from '../../../../domain/product/model/Product';
 import { ProductController } from '../../../../infrastructure/web/ProductController';
 import { ProductFormComponent } from '../../../../domain/product/components/product-form/product-form.component';
 

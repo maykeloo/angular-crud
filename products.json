@@ -1,12 +1,6 @@
 {
   "products": [
     {
-      "uuid": 1,
-      "name": "Product 1",
-      "price": 9999,
-      "id": "c3ca"
-    },
-    {
       "uuid": 2,
       "name": "Product 2",
       "price": 200,
@@ -19,34 +13,10 @@
       "id": "be80"
     },
     {
-      "uuid": 4,
-      "name": "Product 4",
-      "price": 400,
-      "id": "fd4b"
-    },
-    {
       "uuid": 5,
       "name": "Product 5666",
       "price": 500,
       "id": "e7d8"
-    },
-    {
-      "id": "794d",
-      "name": "test",
-      "price": 123,
-      "uuid": "366ysh"
-    },
-    {
-      "id": "5df2",
-      "name": "test2",
-      "price": 2323123,
-      "uuid": "21b67083-3698-4d02-a2b7-3772fbef9014"
-    },
-    {
-      "id": "bb18",
-      "name": "123",
-      "price": 321,
-      "uuid": "7007e7bb-2e4c-438e-bed8-b13890166404"
     }
   ]
 }

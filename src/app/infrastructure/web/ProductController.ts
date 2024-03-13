@@ -20,4 +20,8 @@ export class ProductController implements ProductRepository {
   updateProduct(product: Product) {
     return this.RestClient.patch<Product>(`products/${product.id}`, product)
   }
+
+  deleteProduct(productId: string) {
+    return this.RestClient.delete(`products/${productId}`)
+  }
 }
